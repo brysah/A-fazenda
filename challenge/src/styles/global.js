@@ -20,6 +20,11 @@ export const GlobalStyle = createGlobalStyle`
     html {
         font-size: 62.5%;
         scroll-behavior: smooth;
+        height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
     } 
 
     button {
