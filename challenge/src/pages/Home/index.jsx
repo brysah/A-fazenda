@@ -3,6 +3,13 @@ import { Container } from './styles'
 
 export function Home() {
     return (
-       <Container>pagina home </Container>
+        <Container>
+            <div className="header">
+                <img src={logo} alt="Logo A Fazenda" className="header__logo" />
+                <div className="header__title">
+                    <h2>RANKING</h2>
+                </div>
+            </div>
+        </Container>
     )
 }

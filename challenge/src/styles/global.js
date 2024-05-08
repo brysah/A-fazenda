@@ -27,6 +27,10 @@ export const GlobalStyle = createGlobalStyle`
         max-width: 100%;
     } 
 
+    body{
+        background-color: #272727;
+    }
+
     button {
         background-color: transparent;
         cursor: pointer;
