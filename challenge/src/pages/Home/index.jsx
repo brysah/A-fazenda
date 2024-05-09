@@ -1,8 +1,18 @@
 import logo from '../../assets/imgs/logo.png'
-import { Container } from './styles'
-import barbara from '../../assets/imgs/barbara.png'
+import { Container } from './styles' 
+import { useEffect, useState } from 'react'
+import { data } from '../../data/fazenda.json'
+import { RankItem } from '../../components/RankItem'
 
 export function Home() {
+    const [contestants, setContestants] = useState([{}]);
+
+    console.log(contestants)
+
+    useEffect(() => {
+        setContestants(data);
+    }, [])
+
     return (
         <Container>
             <div className="header">
@@ -11,17 +21,12 @@ export function Home() {
                     <h2>RANKING</h2>
                 </div>
             </div>
-            <div className="ranking">
-                <div className="ranking__item">
-                    <div className="ranking__item__image">
-                        <img src={barbara} alt="barbara" />
-                        <div className="ranking__item__image__counter">1</div>
-                    </div>
-                    <div className="ranking__item__text">
-                        <h3 className="ranking__item__text__title">Barbara Evans</h3>
-                        <p className="ranking__item__text__description">Modelo e filha de Monique Evans</p>
-                    </div>
-                </div>
+            <div className="ranking"> 
+                {
+                    contestants && (contestants.map(contestant => (
+                        <RankItem info={contestant}/>
+                    )))
+                }
             </div>
         </Container>
     )

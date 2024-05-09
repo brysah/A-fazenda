@@ -26,8 +26,7 @@ export const Container = styled.main`
     }
   }
   .ranking {
-    background-color: #fff;
-    padding: 1.6rem 2.4rem;
+    background-color: #fff; 
     margin-top: 1.6rem;
     width: 100%;
     &__item {
