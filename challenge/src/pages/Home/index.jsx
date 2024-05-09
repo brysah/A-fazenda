@@ -8,7 +8,6 @@ import { calculatePercentage } from '../../utils/calculatePercentage'
 export function Home() {
     const [contestants, setContestants] = useState();
 
-
     useEffect(() => {
         let dataSorted = data.map(contestant => ({
             ...contestant,
@@ -28,9 +27,8 @@ export function Home() {
             </div>
             <div className="ranking">
                 {
-                    contestants && (contestants.map((contestant, index) => (
-                        index % 2 === 0 ? <RankItem info={contestant} key={contestant.__id} /> :
-                            <RankItem info={contestant} key={contestant.__id} />
+                    contestants && (contestants.map((contestant, index) => ( 
+                            <RankItem info={contestant} key={contestant.__id} index={index + 1}/>
                     )))
                 }
             </div>

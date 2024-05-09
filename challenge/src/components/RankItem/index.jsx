@@ -1,14 +1,13 @@
 import { Container } from "./styles"
 
-export function RankItem({ info }) {
-
+export function RankItem({ info,index }) {
 
     return (
         <Container>
             <div className="ranking__item">
                 <div className="ranking__item__image">
                     <img src={info.picture} alt={info.name} />
-                    <div className="ranking__item__image__counter">0</div>
+                    <div className="ranking__item__image__counter">{index}</div>
                 </div>
                 <div className="ranking__item__text">
                     <h3 className="ranking__item__text__title">{info.name}</h3>
