@@ -115,8 +115,7 @@ export const Container = styled.div`
       padding: 1rem;
     }
   }
-  
-
+   
   &:hover {
     .ranking__item {
       background-color: rgb(186, 54, 56);
@@ -136,6 +135,19 @@ export const Container = styled.div`
     }
     .tooltip__wrapper {
       visibility: visible;
+    }
+  }
+
+  @media (max-width:768px){
+    .tooltip__wrapper{
+      width: 100%;
+      left: 0;
+      z-index: 1;
+    }
+    &:hover{
+      .ranking__item{
+        visibility:hidden
+      }
     }
   }
 `;

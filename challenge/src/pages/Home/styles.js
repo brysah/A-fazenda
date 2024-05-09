@@ -25,8 +25,8 @@ export const Container = styled.main`
       }
     }
   }
-  .ranking { 
-    background: #FFF;
+  .ranking {
+    background: #fff;
     margin-top: 1.6rem;
     width: 100%;
     &__item {
@@ -64,5 +64,9 @@ export const Container = styled.main`
         }
       }
     }
+  }
+  @media (max-width: 768px) {
+    margin: 20rem auto;
+    max-width: 40rem;
   }
 `;

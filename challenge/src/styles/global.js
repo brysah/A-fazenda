@@ -35,4 +35,9 @@ export const GlobalStyle = createGlobalStyle`
         background-color: transparent;
         cursor: pointer;
     }
+    @media (max-width:768px){
+        body{
+            display: block;
+        }
+    }
 `;
