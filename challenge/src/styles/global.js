@@ -20,15 +20,15 @@ export const GlobalStyle = createGlobalStyle`
     html {
         font-size: 62.5%;
         scroll-behavior: smooth;
+    } 
+
+    body{
+        background-color: #272727; 
         height: 100dvh;
         display: flex;
         align-items: center;
         justify-content: center;
         max-width: 100%;
-    } 
-
-    body{
-        background-color: #272727;
     }
 
     button {
