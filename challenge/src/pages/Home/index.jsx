@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { data } from '../../data/fazenda.json'
 import { RankItem } from '../../components/RankItem'
 import { calculatePercentage } from '../../utils/calculatePercentage'
+import loader from '../../assets/imgs/loader.svg'
 
 export function Home() {
     const [contestants, setContestants] = useState();
@@ -13,8 +14,10 @@ export function Home() {
             ...contestant,
             percentage: calculatePercentage(contestant.positive, contestant.negative)
         }))
-        dataSorted.sort((a, b) =>  b.percentage?.positive - a.percentage?.positive )
-        setContestants(dataSorted);
+        dataSorted.sort((a, b) => b.percentage?.positive - a.percentage?.positive)
+        setTimeout(() => {
+            setContestants(dataSorted);
+        }, 3000)
     }, [])
 
     return (
@@ -27,9 +30,11 @@ export function Home() {
             </div>
             <div className="ranking">
                 {
-                    contestants && (contestants.map((contestant, index) => ( 
-                            <RankItem info={contestant} key={contestant.__id} index={index + 1}/>
-                    )))
+                    contestants ? (contestants.map((contestant, index) => (
+                        <RankItem info={contestant} key={contestant.__id} index={index + 1} />
+                    ))) : (
+                        <img src={loader} alt="loader" />
+                    )
                 }
             </div>
         </Container>

@@ -6,7 +6,7 @@ export function RankItem({ info,index }) {
         <Container>
             <div className="ranking__item">
                 <div className="ranking__item__image">
-                    <img src={info.picture} alt={info.name} />
+                    <img src={info.picture} alt={info.name} loading="lazy"/>
                     <div className="ranking__item__image__counter">{index}</div>
                 </div>
                 <div className="ranking__item__text">
